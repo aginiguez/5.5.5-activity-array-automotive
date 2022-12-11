@@ -14,10 +14,10 @@ class Vehicle {
     start() {
         if (this.fuel > 0) {
             return this.started = true;
-            console.log("engine started...!!!");
+            console.log("engine on");
         } else {
             return this.started = false;
-            console.log("engine cannot start...");
+            console.log("engine stall");
         }
     }
     accelerate() {
@@ -26,7 +26,7 @@ class Vehicle {
                 console.log(this.speed += 1);
                 this.fuel = this.fuel - 1;
             } else {
-                console.log("out of fuel.");
+                console.log("Empty.");
                 this.stop();
             }
         } else {
@@ -44,11 +44,11 @@ class Vehicle {
                     this.fuel = this.fuel - 1;
                 }
             } else {
-                console.log("out of fuel.");
+                console.log("Empty fuel.");
                 this.stop();
             }
         } else {
-            alert("You need to start the engine first.");
+            alert("engine must be on.");
         }
     }
     stop() {
@@ -85,7 +85,6 @@ class Vehicle {
     }
 }
 
-//This exports things you want to use from this "module", more info in readme
 module.exports = {
     Vehicle
 }
